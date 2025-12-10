@@ -297,6 +297,17 @@
                 });
                 componentContainer.appendChild(backButton);
             }
+            
+            // Add Skip button if element is non-mandatory
+            if (!MANDATORY_COMPONENTS[clause].includes(key)) {
+                const skipButton = document.createElement('button');
+                skipButton.className = 'skip-btn text-sm text-gray-600 hover:text-gray-800 font-semibold mt-2 ml-4';
+                skipButton.textContent = 'Skip →';
+                skipButton.addEventListener('click', () => {
+                    handleNextComponent(clause, key, ''); // Pass empty string to indicate skip
+                });
+                componentContainer.appendChild(skipButton);
+            }
 
             renderRecommendations(clause, key, componentContainer.querySelector('.recommendations'));
         }
