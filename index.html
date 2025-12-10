@@ -144,8 +144,8 @@
                 State: ['Exist', 'Do not exist']
             },
             When: {
-                Result: ['Result', 'successfully', 'unsuccessfully'],
-                Verb: ['Verb', 'View', 'Provide', 'Remove', 'Add'],
+                Result: ['successfully', 'unsuccessfully'],
+                Verb: ['View', 'Provide', 'Remove', 'Add'],
                 Subject: ['Admin', 'Non-admin', 'User']
             },
             Then: {
@@ -301,7 +301,7 @@
             // Add Skip button if element is non-mandatory
             if (!MANDATORY_COMPONENTS[clause].includes(key)) {
                 const skipButton = document.createElement('button');
-                skipButton.className = 'skip-btn text-sm text-gray-600 hover:text-gray-800 font-semibold mt-2 ml-4';
+                skipButton.className = 'skip-btn text-sm text-yellow-600 hover:text-gray-800 font-semibold mt-2 ml-4';
                 skipButton.textContent = 'Skip →';
                 skipButton.addEventListener('click', () => {
                     handleNextComponent(clause, key, ''); // Pass empty string to indicate skip
